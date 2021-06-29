@@ -17,9 +17,11 @@ var _catchAsyncErrors = _interopRequireDefault(require("./../middlewares/catchAs
 
 var _stripe = _interopRequireDefault(require("stripe"));
 
-_dotenv["default"].config({
-  path: 'backend/config/config.env'
-});
+if (process.env.NODE_ENV !== 'production') {
+  _dotenv["default"].config({
+    path: 'backend/config/config.env'
+  });
+}
 
 var stripe = new _stripe["default"](process.env.STRIPE_SECRET_KEY);
 /**

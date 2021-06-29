@@ -9,6 +9,8 @@ exports["default"] = void 0;
 
 var _express = _interopRequireDefault(require("express"));
 
+var _dotenv = _interopRequireDefault(require("dotenv"));
+
 var _expressFileupload = _interopRequireDefault(require("express-fileupload"));
 
 var _cookieParser = _interopRequireDefault(require("cookie-parser"));
@@ -28,6 +30,13 @@ var _order = _interopRequireDefault(require("./routes/order"));
 var _errors = _interopRequireDefault(require("./middlewares/errors"));
 
 var app = (0, _express["default"])();
+
+if (process.env.NODE_ENV !== 'production') {
+  _dotenv["default"].config({
+    path: 'backend/config/config.env'
+  });
+}
+
 app.use(_express["default"].json());
 app.use(_express["default"].urlencoded({
   extended: true

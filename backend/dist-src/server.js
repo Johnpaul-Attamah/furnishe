@@ -16,9 +16,11 @@ process.on('uncaughtException', function (err) {
   process.exit(1);
 });
 
-_dotenv["default"].config({
-  path: 'backend/config/config.env'
-});
+if (process.env.NODE_ENV !== 'production') {
+  _dotenv["default"].config({
+    path: 'backend/config/config.env'
+  });
+}
 
 (0, _database["default"])();
 

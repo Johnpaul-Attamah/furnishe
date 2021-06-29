@@ -240,7 +240,7 @@ var forgotPassword = (0, _catchAsyncErrors["default"])( /*#__PURE__*/function ()
             });
 
           case 8:
-            resetUrl = "".concat(process.env.FRONTEND_URL, "/password/reset/").concat(resetToken);
+            resetUrl = "".concat(req.protocol, "://").concat(req.get('host'), "/password/reset/").concat(resetToken);
             message = "Your password reset token is as follows: \n\n".concat(resetUrl, "\n\n if you have not requested this email, please ignore it.");
             _context4.prev = 10;
             _context4.next = 13;
