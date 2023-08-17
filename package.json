@@ -26,7 +26,7 @@
   "author": "Johnpaul Attamah",
   "license": "ISC",
   "dependencies": {
-    "@babel/runtime": "^7.22.10",
+    "@babel/runtime": "7.0.0-beta.55",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cloudinary": "^1.26.0",
